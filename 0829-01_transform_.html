@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0829트랜스폼</title>
+    <style>
+        div{
+            width: 120px;
+            height: 120px;
+            background: red;
+            transition: 0.4s;
+        }
+
+        #one:hover{
+            transform: skewY(40deg);
+        }
+
+        #two{
+            background: blue;
+        }
+
+        #two:hover{
+            transform: translateX(800px);
+        }
+
+        #three{
+            background: green;
+        }
+
+        #three:hover{
+            transform: rotate(720deg);
+        }
+
+        #four{
+            background: yellow;
+        }
+
+        #four:hover{
+            transform: scale(50%);
+        }
+
+        a{
+            text-decoration: none;
+            color: #333;
+            transition: 2s;
+        }
+
+        a:hover{
+            text-decoration: underline;
+            font-size: 72px;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <br>
+    <b>굵은서체</b> <b>굵은서체</b> 내일은어쩌구
+    <br>
+    <a href="http://www.apple.com" target="_blank">애플</a> <a href="http://www.microsoft.com" target="_blank">마소</a>
+    <!-- _blank = 링크 새창에서 띄우기-->
+     <p>오늘은</p><p>내일은</p>
+</body>
+</html>
