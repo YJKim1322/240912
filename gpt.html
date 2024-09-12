@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 정보</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .form-container {
+            background: #fff;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container input, .form-container button {
+            width: calc(100% - 2rem);
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-container button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background: #555;
+        }
+        .info-list {
+            margin: 2rem 0;
+        }
+        .info-list div {
+            background: #fff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>게임 정보 페이지</h1>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <h2>게임 정보 추가</h2>
+            <form id="gameForm">
+                <input type="text" id="gameTitle" placeholder="게임 제목" required>
+                <input type="text" id="gameDescription" placeholder="게임 설명" required>
+                <button type="submit">추가하기</button>
+            </form>
+        </div>
+        <div class="info-list" id="infoList">
+            <!-- 게임 정보가 여기에 추가됩니다 -->
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('gameForm');
+        const infoList = document.getElementById('infoList');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('gameTitle').value;
+            const description = document.getElementById('gameDescription').value;
+
+            if (title && description) {
+                const gameInfo = document.createElement('div');
+                gameInfo.innerHTML = `<strong>${title}</strong><p>${description}</p>`;
+                infoList.appendChild(gameInfo);
+
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>
